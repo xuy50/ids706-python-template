@@ -11,14 +11,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Install base packages
-        run: pip install -r requirements-base.txt
-      - name: Install packages
-        run: make install
-      - name: Lint
-        run: make lint
-      - name: Test
-        run: make test
-      - name: Format
-        run: make format
+    - uses: actions/checkout@v3
+    - name: Install packages
+      run: make install
+    - name: Lint
+      run: make lint
+    - name: Test
+      run: make test
+    - name: Format
+      run: make format
